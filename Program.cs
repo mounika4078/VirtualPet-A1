@@ -4,6 +4,7 @@ public int Health { get; set; }
 
 public int Helper { get; set; }
 
+public int Helper1 { get; set; }
 
 
 
