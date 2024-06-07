@@ -28,6 +28,42 @@ public class VirtualPet
     {
         Console.WriteLine($"Pet Stats - Hunger: {Hunger}, Happiness: {Happiness}, Health: {Health}");
     }
+    public void Feed()
+    {
+        Hunger--;
+        if (Hunger < 0)
+        {
+            Hunger = 0;
+        }
+
+        Health++;
+        if (Health > 10)
+        {
+            Health = 10;
+        }
+        Console.WriteLine($"{Name} has been fed. Hunger decreased, and health slightly increased.");
+    }
+    public void Play()
+    {
+        if (Hunger > 7)
+        {
+            Console.WriteLine($"{Name} is too hungry to play. Please feed the pet first.");
+        }
+        else
+        {
+            Happiness++;
+
+            if (Happiness > 10)
+            {
+                Happiness = 10;
+            }
+
+            Console.WriteLine($"{Name} has played. Happiness increased, and hunger slightly increased.");
+
+            Hunger--; // Increase hunger value slightly after playing
+        }
+    }
+
 
 
 
