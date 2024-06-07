@@ -19,7 +19,18 @@ public class VirtualPet
         Health = 5;
     }
 
-    
+    public void DisplayWelcomeMessage()
+    {
+        Console.WriteLine($"Welcome to the Virtual Pet Simulator!");
+        Console.WriteLine($"You have a {Type} named {Name}.");
+    }
+    public void DisplayStats()
+    {
+        Console.WriteLine($"Pet Stats - Hunger: {Hunger}, Happiness: {Happiness}, Health: {Health}");
+    }
+
+
+
 }
 
 
