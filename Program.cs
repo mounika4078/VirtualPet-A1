@@ -9,7 +9,7 @@ class Program
         Console.Write("Enter pet type (e.g., cat, dog, rabbit): ");
         string petType = Console.ReadLine();
 
-        Console.Write("Enter pet name: ");
+        Console.Write("Enter  your pet name");
         string petName = Console.ReadLine();
 
       
