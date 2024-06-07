@@ -63,11 +63,33 @@ public class VirtualPet
             Hunger--; // Increase hunger value slightly after playing
         }
     }
+    public void Rest()
+    {
+        Health++;
 
+        if (Health > 10)
 
+        {
+            Health = 10;
+        }
 
+        Happiness--;
 
+        if (Happiness < 0)
+        {
+            Happiness = 0;
+        }
+        Console.WriteLine($"{Name} has rested. Health improved, and happiness slightly decreased.");
+    }
+    public void CheckStatus()
+    {
+        if (Hunger <= 2 || Happiness <= 2 || Health <= 2)
+        {
+            Console.WriteLine("Warning: Pet is in critical condition. Please take care of it!");
+        }
+    }
 }
+
 
 
 class Program
@@ -79,11 +101,54 @@ class Program
         Console.Write("Enter pet type (e.g., cat, dog, rabbit): ");
         string petType = Console.ReadLine();
 
-        Console.Write("Enter  your pet namesss");
+        Console.Write("Enter  your pet name");
         string petName = Console.ReadLine();
 
-      
+        VirtualPet pet = new VirtualPet(petType, petName);
+        pet.DisplayWelcomeMessage();
 
-       
+        bool exit = false;
+
+        while (!exit)
+        {
+            Console.WriteLine("\nSelect an action:");
+            Console.WriteLine("1. Feed");
+            Console.WriteLine("2. Play");
+            Console.WriteLine("3. Rest");
+            Console.WriteLine("4. Check Status");
+            Console.WriteLine("5. Exit");
+
+            Console.Write("Enter your choice (1-5): ");
+            string choice = Console.ReadLine();
+
+
+            switch (choice)
+            {
+                case "1":
+                    pet.Feed();
+                    break;
+                case "2":
+                    pet.Play();
+                    break;
+                case "3":
+                    pet.Rest();
+                    break;
+                case "4":
+                    pet.CheckStatus();
+                    pet.DisplayStats();
+                    break;
+                case "5":
+                    exit = true;
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Please try again.");
+                    break;
+            }
+
+            Console.WriteLine("Thank you for playing the Virtual Pet Simulator!");
+        }
     }
+
+
+
 }
