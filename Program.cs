@@ -1,12 +1,19 @@
-﻿public int Hunger { get; set; }
-public int Happiness { get; set; }
-public int Health { get; set; }
+﻿using System;
 
-public int Helper { get; set; }
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Welcome to the Virtual Pet Simulator!");
 
-public int Helper1 { get; set; }
+        Console.Write("Enter pet type (e.g., cat, dog, rabbit): ");
+        string petType = Console.ReadLine();
 
+        Console.Write("Enter pet name: ");
+        string petName = Console.ReadLine();
 
+      
 
-
-
+       
+    }
+}
